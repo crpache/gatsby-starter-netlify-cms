@@ -5,6 +5,23 @@
  */
 
 module.exports = {
-  /* Your site config here */
-  plugins: [],
+  siteMetadata: {
+    title: 'southpress',
+    description: 'southpress website',
+    author: 'crpache',
+    data: ['test1', 'test2'],
+    person: { name: 'test name', age: 24 },
+  },
+  plugins: [
+    `gatsby-plugin-styled-components`,
+    `gatsby-transformer-sharp`, 
+    `gatsby-plugin-sharp`,
+    {
+      resolve: `gatsby-source-filesystem`,
+      options: {
+        name: `images`,
+        path: `${__dirname}/src/images/`,
+      },
+    },
+  ],
 }
